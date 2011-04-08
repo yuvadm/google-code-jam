@@ -1,19 +1,14 @@
 import re
 
-f = open('3.in', 'r')
-o = open('3.out', 'w')
+f = open('1.in', 'r')
+o = open('1.out', 'w')
 
 ldn = f.readline().strip().split(' ')
 l = int(ldn[0])
 d = int(ldn[1])
 n = int(ldn[2])
 
-dicts = ""
-
-for i in xrange(d):
-    word = f.readline().strip()
-    dicts += word
-    dicts += '\n'
+dicts = '\n'.join(f.readline().strip() for i in xrange(d))
 
 for i in xrange(n):
     exp = f.readline().strip()
