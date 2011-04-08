@@ -1,11 +1,28 @@
-f = open('1.in', 'r')
-o = open('1.out', 'w')
+import re
 
-t = int(f.readline().strip())
+f = open('3.in', 'r')
+o = open('3.out', 'w')
 
-for i in range(t):
-    nk = f.readline().strip().split(' ')
-    n = int(nk[0])
-    k = int(nk[1])
+ldn = f.readline().strip().split(' ')
+l = int(ldn[0])
+d = int(ldn[1])
+n = int(ldn[2])
+
+dicts = ""
+
+for i in xrange(d):
+    word = f.readline().strip()
+    dicts += word
+    dicts += '\n'
+
+for i in xrange(n):
+    exp = f.readline().strip()
+    exp = exp.replace('(','[').replace(')',']')
     
+    r = len(re.findall(exp, dicts))
+    
+    s = "Case #%d: %s\n" % (i+1, r)
     o.write(s)
+
+f.close()
+o.close()
