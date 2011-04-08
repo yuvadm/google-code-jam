@@ -27,32 +27,31 @@ for case in xrange(t):
             if j > 0 and m[i][j-1] < m[i][j] and m[i][j-1] < mb:
                 flow = 'W'
                 mb = m[i][j-1]
-            if i < h-2 and m[i+1][j] < m[i][j] and m[i+1][j] < mb:
-                flow = 'E'
-                mb = m[i+1][j]
             if j < h-2 and m[i][j+1] > m[i][j] and m[i][j+1] < mb:
-                flow = 'S'
+                flow = 'E'
                 mb = m[i][j+1]
+            if i < h-2 and m[i+1][j] < m[i][j] and m[i+1][j] < mb:
+                flow = 'S'
+                mb = m[i+1][j]
             
             if flow == '-':
                 cb += 1
                 if i > 0:
-                    bm[i-1][j] = cb
+                    bm[i-1][j] = B[cb]
                 if j > 0:
-                    bm[i][j-1] = cb
-                if i < h-2:
-                    bm[i+1][j] = cb
+                    bm[i][j-1] = B[cb]
                 if j < w-2:
-                    bm[i][j+1] = cb
-                
+                    bm[i][j+1] = B[cb]
+                if i < h-2:
+                    bm[i+1][j] = B[cb]
             elif flow == 'N':
-                bm[i-1][j] = cb
+                bm[i-1][j] = B[cb]
             elif flow == 'W':
-                bm[i][j-1] = cb
+                bm[i][j-1] = B[cb]
             elif flow == 'E':
-                bm[i+1][j] = cb
+                bm[i][j+1] = B[cb]
             elif flow == 'S':
-                bm[i][j+1] = cb
+                bm[i+1][j] = B[cb]
     
     print bm
                   
