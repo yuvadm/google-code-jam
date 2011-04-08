@@ -6,9 +6,7 @@ B = [chr(ord('a')+i) for i in xrange(26)]
 t = int(f.readline().strip())
 
 for case in xrange(t):
-    hw = f.readline().strip().split(' ')
-    h = int(hw[0])
-    w = int(hw[1])
+    (h, w) = list(map(int, f.readline().strip().split(' ')))
     
     m = [map(int, f.readline().strip().split(' ')) for j in xrange(h)]
     

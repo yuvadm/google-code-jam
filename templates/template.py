@@ -4,7 +4,7 @@ o = open('1.out', 'w')
 t = int(f.readline().strip())
 
 for i in xrange(t):
-    nk = f.readline().strip().split(' ')
+    (n, k) = list(map(int, f.readline().strip().split(' ')))
     n = int(nk[0])
     k = int(nk[1])
     
