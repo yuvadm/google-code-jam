@@ -6,7 +6,7 @@ c = int(f.readline().strip())
 def gcd(a, b):
     return a if b==0 else gcd(b, a % b)
 
-for i in range(c):
+for i in xrange(c):
     t = map(int, f.readline().strip().split(' ')[1:])
     l = [abs(x - t[0]) for x in t]
     g = reduce(gcd, l)
