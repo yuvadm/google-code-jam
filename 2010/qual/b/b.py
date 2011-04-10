@@ -1,5 +1,5 @@
-f = open('2.in', 'r')
-o = open('2.out', 'w')
+f = open('3.in', 'r')
+o = open('3.out', 'w')
 
 c = int(f.readline().strip())
 
