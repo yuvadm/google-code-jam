@@ -8,11 +8,7 @@ def rotate(m):
 
 # drop a single row
 def droprow(r):
-    n = len(r)
-    for i in range(n)[::-1]:
-        if r[i] != '.':
-            return r[i+1:]+r[:i+1]
-    return r
+    return '.' * r.count('.') + r.replace('.','')
 
 # drop the rotated matrix
 def gravity(m):
