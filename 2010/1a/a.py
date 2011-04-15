@@ -16,8 +16,7 @@ def diag_inv(m):
     d = [zip(range(i+1),range(i+1)[::-1]) for i in range(n)]
     return [''.join([m[n-1-i][j] for (i,j) in diag]) for diag in d]
 
-print diag(['abc','def','ghi'])
-exit()
+# still need the bottom triangles!!!!! ^^^^^
 
 def rotate(m):
     n = len(m)
