@@ -15,7 +15,6 @@ for j in range(n):
         for l in range(k+1, len(P)):
             if P[k]+P[l]==c:
                 res = [k+1, l+1]
-                res.sort()
                 res = ' '.join(map(str, res))
                 break
     
