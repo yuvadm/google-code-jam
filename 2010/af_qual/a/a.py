@@ -12,9 +12,9 @@ for j in range(n):
     
     res = (0, 0)
     for k in range(len(P)):
-        for l in range(len(P)-1):
-            if P[k]+P[l+1]==c:
-                res = [k+1, l+2]
+        for l in range(k+1, len(P)):
+            if P[k]+P[l]==c:
+                res = [k+1, l+1]
                 res.sort()
                 res = ' '.join(map(str, res))
                 break
