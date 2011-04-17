@@ -4,9 +4,7 @@ o = open('3.out', 'w')
 t = int(f.readline().strip())
 
 for i in range(t):
-    nk = f.readline().strip().split(' ')
-    n = int(nk[0])
-    k = int(nk[1])
+    (n, k) = map(int, f.readline().strip().split(' '))
     
     res = 'ON' if k & 2**n-1 == 2**n-1 else 'OFF'
     
