@@ -1,5 +1,5 @@
-f = open('1.in', 'r')
-o = open('1.out', 'w')
+f = open('2.in', 'r')
+o = open('2.out', 'w')
 
 def cols(m):
     n = len(m)
