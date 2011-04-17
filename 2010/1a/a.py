@@ -8,15 +8,16 @@ def cols(m):
 def diag(m):
     n = len(m)
     d = [zip(range(i+1) ,range(i+1)[::-1]) for i in range(n)]
+    d += [zip(range(i+1, n) ,range(i+1, n)[::-1]) for i in range(n-1)]
     print d
     return [''.join([m[i][j] for (i,j) in diag]) for diag in d]
-    
+                                           
+
 def diag_inv(m):
     n = len(m)
     d = [zip(range(i+1),range(i+1)[::-1]) for i in range(n)]
+    d += [zip(range(i+1, n) ,range(i+1, n)[::-1]) for i in range(n-1)]
     return [''.join([m[n-1-i][j] for (i,j) in diag]) for diag in d]
-
-# still need the bottom triangles!!!!! ^^^^^
 
 def rotate(m):
     n = len(m)
