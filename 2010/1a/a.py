@@ -9,10 +9,8 @@ def diag(m):
     n = len(m)
     d = [zip(range(i+1) ,range(i+1)[::-1]) for i in range(n)]
     d += [zip(range(i+1, n) ,range(i+1, n)[::-1]) for i in range(n-1)]
-    print d
     return [''.join([m[i][j] for (i,j) in diag]) for diag in d]
                                            
-
 def diag_inv(m):
     n = len(m)
     d = [zip(range(i+1),range(i+1)[::-1]) for i in range(n)]
@@ -44,7 +42,10 @@ def win(m, k):
         win |= winrow(row, k)
     for col in cols(m):
         win |= winrow(col, k)
-    
+    for dia in diag(m):
+        win |= winrow(dia, k)
+    for idia in diag_inv(m):
+        win |= winrow(idia, k)
     return R[win]
 
 t = int(f.readline().strip())
@@ -54,7 +55,7 @@ for i in range(t):
     
     mat = [f.readline().strip() for j in range(n)]
     mat = rotate(gravity(mat))
-    
-    s = "Case #%d: \n%s\n" % (i+1, win(1))
+
+    s = "Case #%d: %s\n" % (i+1, win(mat, k))
     print s
     o.write(s)
