@@ -42,14 +42,10 @@ WTCJ = 'welcome to code jam'
 
 for i in xrange(t):
     sub = f.readline().strip()
-    
     prefs = [sub[j:] for j in xrange(len(sub))]
-    print prefs
-    
     r = len(filter(lambda x: isSub(WTCJ, x), prefs))
     
     s = "Case #%d: %d" % (i+1, r)
-    print s
     o.write(s)
 
 f.close()
