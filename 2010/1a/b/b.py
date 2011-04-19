@@ -1,14 +1,23 @@
 f = open('1.in', 'r')
 o = open('1.out', 'w')
 
-t = int(f.readline().strip())
+def smooth(a, d, i, m):
+    if len(a) <= 1:
+        return 0
+    if abs(a[0]-a[1]) > m:
+        cd = d + smooth(a[1:], d, i, m)
+        ci = i + smooth(a[1:], d, i, m)
+        cc = c
+        return min(cd, ci, cc) + smooth(a[1:], d, i, m)
+    else:
+        return smooth(a[1:], d, i, m)
 
-for i in range(t):
-    (n, k) = map(int, f.readline().strip().split(' '))
-    
-    mat = [f.readline().strip() for j in range(n)]
-    mat = rotate(gravity(mat))
+T = int(f.readline().strip())
 
-    s = "Case #%d: %s\n" % (i+1, win(mat, k))
+for t in range(T):
+    (d, i, m, _n) = map(int, f.readline().strip().split(' '))
+    A = map(int, f.readline().strip().split(' '))
+    r = smooth(A, d, i, m)
+    s = "Case #%d: %s\n" % (t+1, r)
     print s
     o.write(s)
