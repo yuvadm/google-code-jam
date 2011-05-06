@@ -1,16 +1,26 @@
 f = open('1.in', 'r')
 o = open('1.out', 'w')
 
-def smooth(a, d, i, m):
-    if len(a) <= 1:
+class memoized(object):
+   def __init__(self, func):
+      self.func = func
+      self.cache = {}
+   def __call__(self, *args):
+      try:
+         return self.cache[args]
+      except KeyError:
+         value = self.func(*args)
+         self.cache[args] = value
+         return value
+      except TypeError:
+         return self.func(*args)
+
+@memoized
+def smooth(a, f, d, i, m):
+    if not a:
         return 0
-    if abs(a[0]-a[1]) > m:
-        cd = d + smooth(a[1:], d, i, m)
-        ci = i + smooth(a[1:], d, i, m)
-        cc = c
-        return min(cd, ci, cc) + smooth(a[1:], d, i, m)
-    else:
-        return smooth(a[1:], d, i, m)
+
+    best = smooth(a[:-1], f, d, i, m) + d
 
 T = int(f.readline().strip())
 
