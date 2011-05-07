@@ -39,10 +39,11 @@ T = int(f.readline().strip())
 for t in xrange(T):
     _n = f.readline().strip()
     el = map(int, f.readline().strip().split(' '))
+
     print el
     res = solve(el)
     
-    s = "Case #%d: %s\n" % (t+1, res)
+    s = "Case #%d: %f\n" % (t+1, res)
     print s
     o.write(s)
 
