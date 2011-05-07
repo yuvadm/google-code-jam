@@ -5,8 +5,7 @@ def solve(a):
     # stop if solved
     while a != sol:
         try:
-            print "%s is not %s" % (a, sol)
-            next = False
+            print "%s not sorted" % a
             # first flip all pairs
             for i in range(len(a)):
                 if a[i] != i+1 and a[a[i]-1] == i+1:
