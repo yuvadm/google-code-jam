@@ -1,5 +1,5 @@
-f = open('2.in', 'r')
-o = open('2.out', 'w')
+f = open('3.in', 'r')
+o = open('3.out', 'w')
 
 T = int(f.readline().strip())
 
@@ -18,7 +18,6 @@ for t in xrange(T):
     el = []
     print cd, od, s
     for c in s:
-        print el
         
         if not el:
             el.append(c)
@@ -39,10 +38,9 @@ for t in xrange(T):
         else:
             el.append(c)            
             
-    res = el
+    res = '[' + ', '.join(el) + ']'
     s = "Case #%d: %s\n" % (t+1, res)
-    print s
-    #o.write(s)
+    o.write(s)
 
 f.close()
 o.close()
