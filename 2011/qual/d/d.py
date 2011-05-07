@@ -43,7 +43,7 @@ for t in xrange(T):
     print el
     res = solve(el)
     
-    s = "Case #%d: %f\n" % (t+1, res)
+    s = "Case #%d: %s\n" % (t+1, res)
     print s
     o.write(s)
 
