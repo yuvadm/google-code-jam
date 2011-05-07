@@ -28,8 +28,8 @@ def solve(a):
                     raise Exception
         except:
             continue
+    assert steps <= (len(a)-1)*2 # upper bound
     return steps
-        
 
 f = open('2.in', 'r')
 o = open('2.out', 'w')
