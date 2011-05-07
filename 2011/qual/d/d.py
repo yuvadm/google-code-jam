@@ -10,7 +10,7 @@ def solve(a):
         # first flip all pairs
         for i in range(len(a)):
             if a[i] != i+1 and a[a[i]-1] == i+1:
-                print 'flipping %d and %d' % (a[a[i]-1], a[i])
+                print 'PAIR FLIP %d and %d' % (a[a[i]-1], a[i])
                 t = a[a[i]-1]
                 a[a[i]-1] = a[i]
                 a[i] = t
@@ -23,7 +23,7 @@ def solve(a):
         # now find the first mixed index to fix
         for i in range(len(a)):
             if a[i] != i+1:
-                print 'flipping %d and %d' % (a[a[i]-1], a[i])
+                print 'FLIP %d and %d' % (a[a[i]-1], a[i])
                 t = a[a[i]-1]
                 a[a[i]-1] = a[i]
                 a[i] = t
