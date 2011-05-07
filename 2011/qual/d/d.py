@@ -1,33 +1,33 @@
-from time import sleep
 
 def solve(a):
     steps = 0
     sol = range(1,len(a)+1)
     # stop if solved
     while a != sol:
-        print "%s is not %s" % (a, sol)
-        flipped = False
-        # first flip all pairs
-        for i in range(len(a)):
-            if a[i] != i+1 and a[a[i]-1] == i+1:
-                print 'PAIR FLIP %d and %d' % (a[a[i]-1], a[i])
-                t = a[a[i]-1]
-                a[a[i]-1] = a[i]
-                a[i] = t
-                steps += 2
-                flipped = True
-    
-        if flipped:
-            continue
+        try:
+            print "%s is not %s" % (a, sol)
+            next = False
+            # first flip all pairs
+            for i in range(len(a)):
+                if a[i] != i+1 and a[a[i]-1] == i+1:
+                    print 'PAIR FLIP %d and %d' % (a[a[i]-1], a[i])
+                    t = a[a[i]-1]
+                    a[a[i]-1] = a[i]
+                    a[i] = t
+                    steps += 2
+                    raise Exception
         
-        # now find the first mixed index to fix
-        for i in range(len(a)):
-            if a[i] != i+1:
-                print 'FLIP %d and %d' % (a[a[i]-1], a[i])
-                t = a[a[i]-1]
-                a[a[i]-1] = a[i]
-                a[i] = t
-                steps += 2
+            # now find the first mixed index to fix
+            for i in range(len(a)):
+                if a[i] != i+1:
+                    print 'FLIP %d and %d' % (a[a[i]-1], a[i])
+                    t = a[a[i]-1]
+                    a[a[i]-1] = a[i]
+                    a[i] = t
+                    steps += 2
+                    raise Exception
+        except:
+            continue
     return steps
         
 
