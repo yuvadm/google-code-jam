@@ -12,8 +12,8 @@ for t in xrange(T):
     
     print m, p
     
-    if m > 0:
-        m -= 1
+    m = m-1 if m>0 else 0
+    
     steps = p + (2 * m)
     
     res = steps
