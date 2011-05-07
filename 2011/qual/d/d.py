@@ -1,34 +1,4 @@
 
-def solve(a):
-    steps = 0
-    sol = range(1,len(a)+1)
-    # stop if solved
-    while a != sol:
-        try:
-            print "%s not sorted" % a
-            # first flip all pairs
-            for i in range(len(a)):
-                if a[i] != i+1 and a[a[i]-1] == i+1:
-                    print 'PAIR FLIP %d and %d' % (a[a[i]-1], a[i])
-                    t = a[a[i]-1]
-                    a[a[i]-1] = a[i]
-                    a[i] = t
-                    steps += 2
-                    raise Exception
-        
-            # now find the first mixed index to fix
-            for i in range(len(a)):
-                if a[i] != i+1:
-                    print 'FLIP %d and %d' % (a[a[i]-1], a[i])
-                    t = a[a[i]-1]
-                    a[a[i]-1] = a[i]
-                    a[i] = t
-                    steps += 2
-                    raise Exception
-        except:
-            continue
-    assert steps <= (len(a)-1)*2 # upper bound
-    return steps
 
 f = open('2.in', 'r')
 o = open('2.out', 'w')
@@ -39,8 +9,12 @@ for t in xrange(T):
     _n = f.readline().strip()
     el = map(int, f.readline().strip().split(' '))
 
-    print el
-    res = solve(el)
+    m = len([el[i] for i in range(len(el)) if el[i] != i+1 and el[el[i]-1] != i+1])
+    p = len([el[i] for i in range(len(el)) if el[i] != i+1 and el[el[i]-1] == i+1])
+    
+    print m, p
+    m = m-1 if m > 0 else 0
+    res = p + (m * 2)
     
     s = "Case #%d: %s\n" % (t+1, res)
     print s
