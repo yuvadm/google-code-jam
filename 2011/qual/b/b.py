@@ -16,7 +16,6 @@ for t in xrange(T):
     od = opp
     
     el = []
-    print cd, od, s
     for c in s:
         
         if not el:
