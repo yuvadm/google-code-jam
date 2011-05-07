@@ -4,9 +4,12 @@ o = open('1.out', 'w')
 T = int(f.readline().strip())
 
 for t in xrange(T):
-    _n = f.readline().strip().split(' ')
+    _n = f.readline().strip()
     el = map(int, f.readline().strip().split(' '))
     
+    sel = sorted(el)
+    
+    print len([(x,y) for (x,y) in zip(el, sel) if x != y])
     
     res = el
     s = "Case #%d: %s\n" % (t+1, res)
