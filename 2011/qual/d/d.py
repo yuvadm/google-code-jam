@@ -10,7 +10,6 @@ for t in xrange(T):
     res = len([el[i] for i in range(len(el)) if el[i] != i+1])
     
     s = "Case #%d: %s\n" % (t+1, res)
-    #print s
     o.write(s)
 
 f.close()

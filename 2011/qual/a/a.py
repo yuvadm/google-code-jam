@@ -15,7 +15,6 @@ for t in xrange(T):
     step = 0
     while (prs):
         step += 1
-        #print prs, oprs, bprs, op, bp
         pushed = False
         if oprs:
             if prs[0] == ('O', op):
@@ -38,7 +37,6 @@ for t in xrange(T):
     
     res = step
     s = "Case #%d: %d\n" % (t+1, res)
-    #print s
     o.write(s)
 
 f.close()

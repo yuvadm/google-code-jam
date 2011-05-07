@@ -10,10 +10,8 @@ for t in xrange(T):
     C = map(int, f.readline().strip().split(' '))
 
     s, p = C, []
-    s.sort()
-    s.reverse()
-    
-    p.append(s.pop())
+    s.sort()    
+    p.append(s.pop(0))
     
     res = 'NO'
     while s:
@@ -22,7 +20,7 @@ for t in xrange(T):
         if ss == sp:
             res = str(sum(s))
             break
-        p.append(s.pop())
+        p.append(s.pop(0))
     
     s = "Case #%d: %s\n" % (t+1, res)
     #print s
