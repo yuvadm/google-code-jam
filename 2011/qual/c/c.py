@@ -23,7 +23,6 @@ for t in xrange(T):
         p.append(s.pop(0))
     
     s = "Case #%d: %s\n" % (t+1, res)
-    #print s
     o.write(s)
 
 f.close()
