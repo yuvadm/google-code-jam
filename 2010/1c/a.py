@@ -12,12 +12,13 @@ for t in xrange(T):
     wires.sort(key=lambda wire: wire[0])
     
     cross = 0
-    bwires = [x[1] for x in wires]
-    print bwires
-    bwd = [bwires[i+1]-bwires[i] for i in range(len(bwires)-1)]
-    print bwd
-    res = len([x for x in bwd if x < 0])
+    bw = [x[1] for x in wires]
     
-    s = "Case #%d: %s\n" % (t+1, res)
+    for i in range(len(bw)):
+        for j in range(i+1, len(bw)):
+            if bw[i] > bw[j]:
+                cross += 1
+    
+    s = "Case #%d: %s\n" % (t+1, cross)
     print s
     #o.write(s)
