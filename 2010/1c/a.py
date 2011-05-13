@@ -1,5 +1,5 @@
-f = open('1.in', 'r')
-o = open('1.out', 'w')
+f = open('3.in', 'r')
+o = open('3.out', 'w')
 
 T = int(f.readline().strip())
 
@@ -21,4 +21,4 @@ for t in xrange(T):
     
     s = "Case #%d: %s\n" % (t+1, cross)
     print s
-    #o.write(s)
+    o.write(s)
