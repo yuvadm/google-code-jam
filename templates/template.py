@@ -1,9 +1,13 @@
 f = open('1.in', 'r')
 o = open('1.out', 'w')
 
-t = int(f.readline().strip())
+T = int(f.readline().strip())
 
-for i in xrange(t):
-    (n, k) = list(map(int, f.readline().strip().split(' ')))
+for t in xrange(T):
+    (n, m, o) = map(int, f.readline().strip().split(' '))
+    l = f.readline().strip()
     
-    o.write(s)
+    res = str(n) + str(m) + str(o) + l
+    s = "Case #%d: %s\n" % (t+1, res)
+    print s
+    #o.write(s)
