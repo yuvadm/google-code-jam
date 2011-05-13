@@ -5,16 +5,14 @@ T = int(f.readline().strip())
 
 for t in xrange(T):
     N = int(f.readline().strip())
-    wires = [map(int, f.readline().strip().split(' ')) for _n in range(N)]
+    w = [map(int, f.readline().strip().split(' ')) for _n in range(N)]
     
-    wires.sort(key=lambda wire: wire[0])
+    w.sort(key=lambda wire: wire[0])
     
     cross = 0
-    bw = [x[1] for x in wires]
-    
-    for i in range(len(bw)):
-        for j in range(i+1, len(bw)):
-            if bw[i] > bw[j]:
+    for i in range(N):
+        for j in range(i+1, N):
+            if w[i][1] > w[j][1]:
                 cross += 1
     
     s = "Case #%d: %s\n" % (t+1, cross)
