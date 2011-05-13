@@ -5,9 +5,7 @@ T = int(f.readline().strip())
 
 for t in xrange(T):
     N = int(f.readline().strip())
-    wires = []
-    for n in range(N):
-        wires.append(map(int, f.readline().strip().split(' ')))
+    wires = [map(int, f.readline().strip().split(' ')) for _n in range(N)]
     
     wires.sort(key=lambda wire: wire[0])
     
