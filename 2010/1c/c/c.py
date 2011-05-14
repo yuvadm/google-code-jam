@@ -4,10 +4,10 @@ o = open('1.out', 'w')
 T = int(f.readline().strip())
 
 for t in xrange(T):
-    (n, m, o) = map(int, f.readline().strip().split(' '))
-    l = f.readline().strip()
+    (M, N) = map(int, f.readline().strip().split(' '))
+    grid = [int(f.readline().strip(), 16) for _m in range(M)]
     
-    res = str(n) + str(m) + str(o) + l
+    res = grid
     s = "Case #%d: %s\n" % (t+1, res)
     print s
     #o.write(s)
