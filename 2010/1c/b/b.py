@@ -1,13 +1,19 @@
-f = open('1.in', 'r')
-o = open('1.out', 'w')
+f = open('2.in', 'r')
+o = open('2.out', 'w')
 
 T = int(f.readline().strip())
 
 for t in xrange(T):
-    (n, m, o) = map(int, f.readline().strip().split(' '))
-    l = f.readline().strip()
+    (l, p, c) = map(int, f.readline().strip().split(' '))
     
-    res = str(n) + str(m) + str(o) + l
+    res = 0
+    if p / l != c:
+        exp = 2
+        res += 1
+        while l * (c**exp) < p:
+            exp *= 2
+            res += 1
+    
     s = "Case #%d: %s\n" % (t+1, res)
     print s
-    #o.write(s)
+    o.write(s)
