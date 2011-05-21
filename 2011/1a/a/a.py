@@ -1,13 +1,15 @@
-f = open('1.in', 'r')
-o = open('1.out', 'w')
+f = open('2.in', 'r')
+o = open('2.out', 'w')
 
 T = int(f.readline().strip())
 
 for t in xrange(T):
-    (n, m, o) = map(int, f.readline().strip().split(' '))
-    l = f.readline().strip()
+    (N, PD, PG) = map(int, f.readline().strip().split(' '))
     
-    res = str(n) + str(m) + str(o) + l
+    wt = N * PD / 100
+    wy = N * PG / 100
+    
+    res = 'Possible' if wt >= wy else 'Broken'
     s = "Case #%d: %s\n" % (t+1, res)
     print s
-    #o.write(s)
+    o.write(s)
