@@ -4,14 +4,9 @@ o = open('1.out', 'w')
 T = int(f.readline().strip())
 
 for t in xrange(T):
-    (N, PD, PG) = map(int, f.readline().strip().split(' '))
+    (N, M) = map(int, f.readline().strip().split(' '))
     
-    wt = (N * PD)
-    wy = (N * PG)
-    
-    print (wt, wy)
-    
-    res = 'Possible' if PD >= PG else 'Broken'
+    res = N
     s = "Case #%d: %s\n" % (t+1, res)
     print s
     o.write(s)
