@@ -8,8 +8,8 @@ for t in xrange(T):
     
     wt = N * PD / 100
     wy = N * PG / 100
-    
-    res = 'Possible' if wt >= wy else 'Broken'
+
+    res = 'Possible' if PD > PG else 'Broken'
     s = "Case #%d: %s\n" % (t+1, res)
     print s
     o.write(s)
